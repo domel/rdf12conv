@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""RDF 1.2 converter between N-Triples and Turtle.
+"""RDF 1.2 converter between N-Triples, N-Quads, Turtle, and TriG.
 
 Implementation is self-contained and does not rely on rdflib.
-It follows repository grammars from ``grammar/ntriples.bnf`` and ``grammar/turtle.bnf``.
+It follows repository grammars from ``grammar/*.bnf``.
 """
 
 from __future__ import annotations
@@ -80,6 +80,8 @@ class TripleTerm:
 
 Node = IRI | BNode | Literal | TripleTerm
 Triple = tuple[IRI | BNode, IRI, Node]
+GraphLabel = IRI | BNode
+Quad = tuple[IRI | BNode, IRI, Node, GraphLabel | None]
 
 
 @dataclass
@@ -615,6 +617,25 @@ def is_keyword_ci(scanner: Scanner, kw: str) -> bool:
     return is_name_boundary(nxt)
 
 
+def is_keyword_with_extra_boundary(scanner: Scanner, kw: str, extra: str) -> bool:
+    """Return whether keyword matches and is followed by a standard or extra boundary."""
+    if not scanner.startswith(kw):
+        return False
+    nxt = scanner.peek(len(kw))
+    return is_name_boundary(nxt) or nxt in extra
+
+
+def is_keyword_ci_with_extra_boundary(scanner: Scanner, kw: str, extra: str) -> bool:
+    """Case-insensitive keyword match allowing additional boundary characters."""
+    end = scanner.i + len(kw)
+    if end > len(scanner.text):
+        return False
+    if scanner.text[scanner.i : end].lower() != kw.lower():
+        return False
+    nxt = scanner.peek(len(kw))
+    return is_name_boundary(nxt) or nxt in extra
+
+
 class BaseParser:
     """Shared parser utilities used by the N-Triples and Turtle parsers."""
     def __init__(self, text: str, source: str):
@@ -922,6 +943,63 @@ class NTriplesParser(BaseParser):
         self.scanner.error("invalid triple term object")
 
 
+class NQuadsParser(NTriplesParser):
+    """Parser for the repository's RDF 1.2 N-Quads grammar."""
+
+    def __init__(self, text: str, source: str):
+        """Initialize the `NQuadsParser` instance."""
+        super().__init__(text, source)
+        self.quads: list[Quad] = []
+        self._current_graph: GraphLabel | None = None
+
+    def emit(self, subject: IRI | BNode, predicate: IRI, obj: Node) -> None:
+        """Append one quad to the parser output buffer."""
+        self.quads.append((subject, predicate, obj, self._current_graph))
+
+    def parse(self) -> list[Quad]:
+        """Parse the current document and return parsed quads."""
+        while True:
+            skip_ws_comments(self.scanner)
+            if self.scanner.eof():
+                return self.quads
+            if is_keyword(self.scanner, "VERSION"):
+                self.parse_version_directive()
+                continue
+            self.parse_quad_statement()
+
+    def parse_quad_statement(self) -> None:
+        """Parse one N-Quads statement."""
+        subject = self.parse_subject()
+        skip_ws_comments(self.scanner)
+        predicate = self.parse_predicate()
+        skip_ws_comments(self.scanner)
+        obj = self.parse_object()
+
+        skip_ws_comments(self.scanner)
+        if self.scanner.startswith("{|"):
+            self.scanner.error("annotation syntax is not permitted in N-Quads")
+        graph: GraphLabel | None = None
+        if not self.scanner.startswith("."):
+            graph = self.parse_graph_label()
+            skip_ws_comments(self.scanner)
+        self.scanner.expect(".", "expected '.' to end N-Quads statement")
+
+        previous_graph = self._current_graph
+        self._current_graph = graph
+        try:
+            self.emit(subject, predicate, obj)
+        finally:
+            self._current_graph = previous_graph
+
+    def parse_graph_label(self) -> GraphLabel:
+        """Parse optional graph label position in an N-Quads statement."""
+        if self.scanner.peek() == "<":
+            return IRI(self.parse_iri(require_absolute=True))
+        if self.scanner.startswith("_:"):
+            return self.parse_blank_node_label()
+        self.scanner.error("N-Quads graph label must be IRI or blank node")
+
+
 class TurtleParser(BaseParser):
     """Parser for the repository's RDF 1.2 Turtle grammar."""
     def __init__(self, text: str, source: str, base_iri: str | None):
@@ -944,9 +1022,7 @@ class TurtleParser(BaseParser):
 
     def parse_directive_if_present(self) -> bool:
         """Parse directive if present from the current input and return the result."""
-        if self.scanner.startswith("@prefix") and is_name_boundary(
-            self.scanner.peek(len("@prefix"))
-        ):
+        if is_keyword_with_extra_boundary(self.scanner, "@prefix", ":"):
             self.scanner.expect("@prefix")
             skip_ws_comments(self.scanner)
             prefix = self.parse_pname_ns()
@@ -956,25 +1032,21 @@ class TurtleParser(BaseParser):
             self.scanner.expect(".", "expected '.' after @prefix")
             self.prefixes[prefix] = iri
             return True
-        if self.scanner.startswith("@base") and is_name_boundary(
-            self.scanner.peek(len("@base"))
-        ):
+        if is_keyword_with_extra_boundary(self.scanner, "@base", "<"):
             self.scanner.expect("@base")
             skip_ws_comments(self.scanner)
             self.base_iri = self.parse_iri_ref_turtle()
             skip_ws_comments(self.scanner)
             self.scanner.expect(".", "expected '.' after @base")
             return True
-        if self.scanner.startswith("@version") and is_name_boundary(
-            self.scanner.peek(len("@version"))
-        ):
+        if is_keyword_with_extra_boundary(self.scanner, "@version", "\"'"):
             self.scanner.expect("@version")
             skip_ws_comments(self.scanner)
             self.parse_version_specifier()
             skip_ws_comments(self.scanner)
             self.scanner.expect(".", "expected '.' after @version")
             return True
-        if is_keyword_ci(self.scanner, "PREFIX"):
+        if is_keyword_ci_with_extra_boundary(self.scanner, "PREFIX", ":"):
             for _ in "PREFIX":
                 self.scanner.advance()
             skip_ws_comments(self.scanner)
@@ -983,13 +1055,13 @@ class TurtleParser(BaseParser):
             iri = self.parse_iri_ref_turtle()
             self.prefixes[prefix] = iri
             return True
-        if is_keyword_ci(self.scanner, "BASE"):
+        if is_keyword_ci_with_extra_boundary(self.scanner, "BASE", "<"):
             for _ in "BASE":
                 self.scanner.advance()
             skip_ws_comments(self.scanner)
             self.base_iri = self.parse_iri_ref_turtle()
             return True
-        if is_keyword_ci(self.scanner, "VERSION"):
+        if is_keyword_ci_with_extra_boundary(self.scanner, "VERSION", "\"'"):
             for _ in "VERSION":
                 self.scanner.advance()
             skip_ws_comments(self.scanner)
@@ -1545,9 +1617,168 @@ class TurtleParser(BaseParser):
         return is_pn_chars_base(ch)
 
 
+class TriGParser(TurtleParser):
+    """Parser for the repository's RDF 1.2 TriG grammar."""
+
+    def __init__(self, text: str, source: str, base_iri: str | None):
+        """Initialize the `TriGParser` instance."""
+        super().__init__(text=text, source=source, base_iri=base_iri)
+        self.quads: list[Quad] = []
+        self._current_graph: GraphLabel | None = None
+
+    def emit(self, subject: IRI | BNode, predicate: IRI, obj: Node) -> None:
+        """Append one quad to the parser output buffer."""
+        self.quads.append((subject, predicate, obj, self._current_graph))
+
+    def parse(self) -> list[Quad]:
+        """Parse the current document and return parsed quads."""
+        while True:
+            skip_ws_comments(self.scanner)
+            if self.scanner.eof():
+                return self.quads
+            if self.parse_directive_if_present():
+                continue
+            self.parse_trig_block()
+
+    def parse_trig_block(self) -> None:
+        """Parse one top-level TriG block or triples statement."""
+        skip_ws_comments(self.scanner)
+        if is_keyword_ci(self.scanner, "GRAPH"):
+            for _ in "GRAPH":
+                self.scanner.advance()
+            skip_ws_comments(self.scanner)
+            graph_label = self.parse_graph_label_trig()
+            skip_ws_comments(self.scanner)
+            self.parse_wrapped_graph(graph_label)
+            return
+
+        if self.scanner.peek() == "{":
+            self.parse_wrapped_graph(None)
+            return
+
+        if self.scanner.peek() == "(" or (
+            self.scanner.startswith("<<") and not self.scanner.startswith("<<(")
+        ):
+            self.parse_triples_statement()
+            skip_ws_comments(self.scanner)
+            self.scanner.expect(".", "expected '.' to end TriG triple statement")
+            return
+
+        if self.scanner.peek() == "[":
+            emitted_before = len(self.quads)
+            subject = self.parse_blank_node_property_list()
+            emitted_in_subject = len(self.quads) != emitted_before
+            skip_ws_comments(self.scanner)
+            if self.scanner.peek() == "{":
+                if emitted_in_subject:
+                    self.scanner.error(
+                        "TriG graph labels cannot be blankNodePropertyList terms"
+                    )
+                self.parse_wrapped_graph(subject)
+                return
+            if self.can_start_verb():
+                pairs = self.parse_pairs_structure(
+                    terminators=(".",), allow_a_verb=True
+                )
+                self.emit_pairs_from_structure(subject, pairs)
+            elif not self.scanner.startswith("."):
+                self.scanner.error("expected '{' or predicate after TriG subject")
+            skip_ws_comments(self.scanner)
+            self.scanner.expect(".", "expected '.' to end TriG triple statement")
+            return
+
+        subject = self.parse_trig_label_or_subject()
+        skip_ws_comments(self.scanner)
+        if self.scanner.peek() == "{":
+            self.parse_wrapped_graph(subject)
+            return
+
+        pairs = self.parse_pairs_structure(terminators=(".",), allow_a_verb=True)
+        self.emit_pairs_from_structure(subject, pairs)
+        skip_ws_comments(self.scanner)
+        self.scanner.expect(".", "expected '.' to end TriG triple statement")
+
+    def parse_wrapped_graph(self, graph_label: GraphLabel | None) -> None:
+        """Parse a TriG wrapped graph block in the given graph context."""
+        self.scanner.expect("{")
+        previous_graph = self._current_graph
+        self._current_graph = graph_label
+        try:
+            skip_ws_comments(self.scanner)
+            if self.scanner.consume("}"):
+                return
+
+            while True:
+                self.parse_triples_statement_in_graph_block()
+                skip_ws_comments(self.scanner)
+                if self.scanner.consume("."):
+                    skip_ws_comments(self.scanner)
+                    if self.scanner.consume("}"):
+                        return
+                    continue
+                self.scanner.expect(
+                    "}", "expected '}' or '.' after TriG triples in graph block"
+                )
+                return
+        finally:
+            self._current_graph = previous_graph
+
+    def parse_triples_statement_in_graph_block(self) -> None:
+        """Parse a TriG triples statement inside `{...}` with `}` as a terminator."""
+        skip_ws_comments(self.scanner)
+        if self.scanner.startswith("<<") and not self.scanner.startswith("<<("):
+            subject, _ = self.parse_reified_triple(needs_subject_reference=True)
+            skip_ws_comments(self.scanner)
+            if self.can_start_verb():
+                pairs = self.parse_pairs_structure(
+                    terminators=(".", "}"), allow_a_verb=True
+                )
+                self.emit_pairs_from_structure(subject, pairs)
+            return
+
+        if self.scanner.peek() == "[":
+            subject = self.parse_blank_node_property_list()
+            skip_ws_comments(self.scanner)
+            if self.can_start_verb():
+                pairs = self.parse_pairs_structure(
+                    terminators=(".", "}"), allow_a_verb=True
+                )
+                self.emit_pairs_from_structure(subject, pairs)
+            return
+
+        subject = self.parse_subject()
+        skip_ws_comments(self.scanner)
+        pairs = self.parse_pairs_structure(terminators=(".", "}"), allow_a_verb=True)
+        self.emit_pairs_from_structure(subject, pairs)
+
+    def parse_trig_label_or_subject(self) -> IRI | BNode:
+        """Parse a TriG labelOrSubject in non-bracket form."""
+        if self.scanner.startswith("_:"):
+            return self.parse_blank_node_label()
+        return self.parse_iri()
+
+    def parse_graph_label_trig(self) -> GraphLabel:
+        """Parse a TriG graph label (`iri`, `_:` label, or `[]`)."""
+        if self.scanner.peek() == "[":
+            self.scanner.expect("[")
+            skip_ws_comments(self.scanner)
+            if not self.scanner.consume("]"):
+                self.scanner.error("TriG graph label blank node must be [] or _:label")
+            return self.new_bnode()
+        if self.scanner.startswith("_:"):
+            return self.parse_blank_node_label()
+        return self.parse_iri()
+
+
 def parse_ntriples(text: str, source: str = "<string>") -> list[Triple]:
     """Parse N-Triples text and return a list of RDF triples."""
     parser = NTriplesParser(text=text, source=source)
+    return parser.parse()
+
+
+def parse_nquads(text: str, source: str = "<string>") -> list[Quad]:
+    """Parse N-Quads text and return a list of RDF quads."""
+    parser = NQuadsParser(text=text, source=source)
     return parser.parse()
 
 
@@ -1557,6 +1788,35 @@ def parse_turtle(
     """Parse Turtle text and return a list of RDF triples."""
     parser = TurtleParser(text=text, source=source, base_iri=base_iri)
     return parser.parse()
+
+
+def parse_trig(
+    text: str, source: str = "<string>", base_iri: str | None = None
+) -> list[Quad]:
+    """Parse TriG text and return a list of RDF quads."""
+    parser = TriGParser(text=text, source=source, base_iri=base_iri)
+    return parser.parse()
+
+
+def triples_to_quads(triples: list[Triple]) -> list[Quad]:
+    """Lift triples into the default graph for dataset processing."""
+    return [(subject, predicate, obj, None) for subject, predicate, obj in triples]
+
+
+def quads_to_default_graph_triples(
+    quads: list[Quad],
+    *,
+    target_format: str,
+) -> list[Triple]:
+    """Drop graph labels after verifying that only the default graph is present."""
+    triples: list[Triple] = []
+    for subject, predicate, obj, graph_label in quads:
+        if graph_label is not None:
+            raise ValueError(
+                f"cannot serialize named graphs to {target_format}; dataset contains non-default graph statements"
+            )
+        triples.append((subject, predicate, obj))
+    return triples
 
 
 def format_node_nt(node: Node) -> str:
@@ -1592,6 +1852,32 @@ def serialize_ntriples(triples: list[Triple]) -> str:
         p = format_node_nt(predicate)
         o = format_node_nt(obj)
         lines.append(f"{s} {p} {o} .")
+    if not lines:
+        return ""
+    return "\n".join(lines) + "\n"
+
+
+def format_graph_label_nt(graph_label: GraphLabel) -> str:
+    """Format an RDF graph label using N-Quads syntax."""
+    if isinstance(graph_label, IRI):
+        return encode_iri_ref(graph_label.value)
+    if isinstance(graph_label, BNode):
+        return f"_:{graph_label.label}"
+    raise TypeError(f"invalid graph label type for N-Quads: {type(graph_label)!r}")
+
+
+def serialize_nquads(quads: list[Quad]) -> str:
+    """Serialize quads to deterministic N-Quads text."""
+    lines: list[str] = []
+    for subject, predicate, obj, graph_label in quads:
+        s = format_node_nt(subject)
+        p = format_node_nt(predicate)
+        o = format_node_nt(obj)
+        if graph_label is None:
+            lines.append(f"{s} {p} {o} .")
+        else:
+            g = format_graph_label_nt(graph_label)
+            lines.append(f"{s} {p} {o} {g} .")
     if not lines:
         return ""
     return "\n".join(lines) + "\n"
@@ -2017,6 +2303,51 @@ def format_node_turtle(
     raise TypeError(f"unsupported node type: {type(node)!r}")
 
 
+def format_graph_label_turtle(graph_label: GraphLabel, prefixes: dict[str, str]) -> str:
+    """Format a graph label for TriG output."""
+    if isinstance(graph_label, IRI):
+        return format_iri_turtle(graph_label.value, prefixes)
+    if isinstance(graph_label, BNode):
+        return f"_:{graph_label.label}"
+    raise TypeError(f"invalid graph label type for TriG: {type(graph_label)!r}")
+
+
+def build_turtle_statement_blocks(
+    triples: list[Triple],
+    prefixes: dict[str, str],
+    list_heads: dict[BNode, list[Node]],
+) -> list[str]:
+    """Render grouped Turtle subject blocks without directives/prefix headers."""
+    grouped: dict[IRI | BNode, dict[IRI, list[Node]]] = {}
+    for subject, predicate, obj in triples:
+        predicates = grouped.setdefault(subject, {})
+        objects = predicates.setdefault(predicate, [])
+        objects.append(obj)
+
+    blocks: list[str] = []
+    for subject, predicates in grouped.items():
+        subject_text = format_node_turtle(subject, prefixes, list_heads)
+        predicate_parts: list[str] = []
+        for predicate, objects in predicates.items():
+            predicate_text = format_predicate_turtle(predicate, prefixes)
+            object_text = ", ".join(
+                format_node_turtle(obj, prefixes, list_heads) for obj in objects
+            )
+            predicate_parts.append(f"{predicate_text} {object_text}")
+
+        block = f"{subject_text} {predicate_parts[0]}"
+        for part in predicate_parts[1:]:
+            block += f"\n    ; {part}"
+        block += " ."
+        blocks.append(block)
+    return blocks
+
+
+def indent_multiline_block(text: str, prefix: str) -> str:
+    """Indent every line of a multi-line text block."""
+    return "\n".join(prefix + line for line in text.splitlines())
+
+
 def serialize_turtle_with_meta(
     triples: list[Triple],
     options: TurtleSerializationOptions | None = None,
@@ -2076,27 +2407,7 @@ def serialize_turtle_with_meta(
     elif opts.output_base is not None:
         lines.append("")
 
-    grouped: dict[IRI | BNode, dict[IRI, list[Node]]] = {}
-    for subject, predicate, obj in visible_triples:
-        predicates = grouped.setdefault(subject, {})
-        objects = predicates.setdefault(predicate, [])
-        objects.append(obj)
-
-    for subject, predicates in grouped.items():
-        subject_text = format_node_turtle(subject, prefixes, list_heads)
-        predicate_parts: list[str] = []
-        for predicate, objects in predicates.items():
-            predicate_text = format_predicate_turtle(predicate, prefixes)
-            object_text = ", ".join(
-                format_node_turtle(obj, prefixes, list_heads) for obj in objects
-            )
-            predicate_parts.append(f"{predicate_text} {object_text}")
-
-        block = f"{subject_text} {predicate_parts[0]}"
-        for part in predicate_parts[1:]:
-            block += f"\n    ; {part}"
-        block += " ."
-        lines.append(block)
+    lines.extend(build_turtle_statement_blocks(visible_triples, prefixes, list_heads))
 
     if not lines:
         return "", meta
@@ -2112,18 +2423,165 @@ def serialize_turtle(
     return text
 
 
+def serialize_trig_with_meta(
+    quads: list[Quad],
+    options: TurtleSerializationOptions | None = None,
+) -> tuple[str, dict[str, int]]:
+    """Serialize quads to TriG and return serialization metadata counters."""
+    opts = options or TurtleSerializationOptions()
+    if opts.style not in {"readable", "minimal"}:
+        raise ValueError(f"unsupported turtle style: {opts.style}")
+
+    grouped: dict[GraphLabel | None, list[Triple]] = {}
+    for subject, predicate, obj, graph_label in quads:
+        triples = grouped.setdefault(graph_label, [])
+        triples.append((subject, predicate, obj))
+
+    lines: list[str] = []
+    meta = {
+        "prefixes_emitted": 0,
+        "lists_compacted": 0,
+        "triples_serialized": len(quads),
+        "quads_serialized": len(quads),
+        "graphs_serialized": len(grouped),
+    }
+
+    if opts.output_base is not None:
+        lines.append(f"@base {encode_iri_ref(opts.output_base)} .")
+
+    if opts.style == "minimal":
+        for graph_label, triples in grouped.items():
+            if graph_label is None:
+                for subject, predicate, obj in triples:
+                    s = format_node_nt(subject)
+                    p = format_node_nt(predicate)
+                    o = format_node_nt(obj)
+                    lines.append(f"{s} {p} {o} .")
+                continue
+
+            graph_text = format_graph_label_nt(graph_label)
+            body_lines = []
+            for subject, predicate, obj in triples:
+                s = format_node_nt(subject)
+                p = format_node_nt(predicate)
+                o = format_node_nt(obj)
+                body_lines.append(f"{s} {p} {o} .")
+            if not body_lines:
+                continue
+            body = indent_multiline_block("\n".join(body_lines), "    ")
+            lines.append(f"{graph_text} {{\n{body}\n}}")
+
+        if not lines:
+            return "", meta
+        return "\n".join(lines) + "\n", meta
+
+    if opts.lists == "auto":
+        plans: dict[GraphLabel | None, tuple[list[Triple], dict[BNode, list[Node]]]] = {}
+        combined_visible: list[Triple] = []
+        combined_list_heads: dict[BNode, list[Node]] = {}
+        total_visible = 0
+        for graph_label, triples in grouped.items():
+            list_heads, removed_indices = collect_list_compaction(triples)
+            visible_triples = [
+                triple for idx, triple in enumerate(triples) if idx not in removed_indices
+            ]
+            plans[graph_label] = (visible_triples, list_heads)
+            combined_visible.extend(visible_triples)
+            combined_list_heads.update(list_heads)
+            total_visible += len(visible_triples)
+            meta["lists_compacted"] += len(list_heads)
+        meta["triples_serialized"] = total_visible
+    elif opts.lists == "off":
+        plans = {
+            graph_label: (triples, {})
+            for graph_label, triples in grouped.items()
+        }
+    else:
+        raise ValueError(f"unsupported lists mode: {opts.lists}")
+
+    if opts.lists == "off":
+        combined_visible = []
+        combined_list_heads = {}
+        total_visible = 0
+        for visible_triples, list_heads in plans.values():
+            combined_visible.extend(visible_triples)
+            combined_list_heads.update(list_heads)
+            total_visible += len(visible_triples)
+        meta["triples_serialized"] = total_visible
+
+    auto_prefixes = choose_turtle_prefixes(combined_visible, combined_list_heads)
+    prefixes = merge_prefix_maps(
+        manual_prefixes=opts.manual_prefixes,
+        auto_prefixes=auto_prefixes,
+        auto_enabled=(opts.auto_prefixes == "on"),
+    )
+    meta["prefixes_emitted"] = len(prefixes)
+
+    content_blocks: list[str] = []
+
+    default_plan = plans.get(None)
+    if default_plan is not None:
+        visible_triples, list_heads = default_plan
+        content_blocks.extend(
+            build_turtle_statement_blocks(visible_triples, prefixes, list_heads)
+        )
+
+    for graph_label, _triples in grouped.items():
+        if graph_label is None:
+            continue
+        visible_triples, list_heads = plans[graph_label]
+        if not visible_triples:
+            continue
+        graph_text = format_graph_label_turtle(graph_label, prefixes)
+        body_blocks = build_turtle_statement_blocks(visible_triples, prefixes, list_heads)
+        body = indent_multiline_block("\n".join(body_blocks), "    ")
+        content_blocks.append(f"{graph_text} {{\n{body}\n}}")
+
+    if prefixes:
+        if lines:
+            lines.append("")
+        for prefix, namespace in prefixes.items():
+            lines.append(f"@prefix {prefix}: {encode_iri_ref(namespace)} .")
+        if content_blocks:
+            lines.append("")
+    elif opts.output_base is not None and content_blocks:
+        lines.append("")
+
+    lines.extend(content_blocks)
+
+    if not lines:
+        return "", meta
+    return "\n".join(lines) + "\n", meta
+
+
+def serialize_trig(
+    quads: list[Quad],
+    options: TurtleSerializationOptions | None = None,
+) -> str:
+    """Serialize quads to TriG text using the selected options."""
+    text, _ = serialize_trig_with_meta(quads, options=options)
+    return text
+
+
 FORMAT_ALIASES = {
     "nt": "nt",
     "ntriples": "nt",
     "n-triples": "nt",
+    "nq": "nq",
+    "nquads": "nq",
+    "n-quads": "nq",
     "ttl": "turtle",
     "turtle": "turtle",
+    "trig": "trig",
 }
 
 EXTENSION_FORMATS = {
     ".nt": "nt",
+    ".nq": "nq",
+    ".nquads": "nq",
     ".ttl": "turtle",
     ".turtle": "turtle",
+    ".trig": "trig",
 }
 
 
@@ -2158,7 +2616,7 @@ def write_output(path: str, data: str) -> None:
 
 
 def guess_base_iri(path: str, explicit_base: str | None) -> str | None:
-    """Derive the Turtle base IRI from CLI arguments and input path."""
+    """Derive the Turtle/TriG base IRI from CLI arguments and input path."""
     if explicit_base is not None:
         return explicit_base
     if path == "-":
@@ -2200,8 +2658,8 @@ def collect_node_metrics(
     raise TypeError(f"unsupported node type: {type(node)!r}")
 
 
-def compute_graph_stats(triples: list[Triple]) -> dict[str, int]:
-    """Compute graph-level counts for the parsed RDF triples."""
+def compute_dataset_stats(quads: list[Quad]) -> dict[str, int]:
+    """Compute dataset-level counts for parsed RDF quads."""
     iri_values: set[str] = set()
     bnode_labels: set[str] = set()
     literal_values: set[tuple[str, str | None, str | None, str | None]] = set()
@@ -2210,8 +2668,11 @@ def compute_graph_stats(triples: list[Triple]) -> dict[str, int]:
     subject_values: set[IRI | BNode] = set()
     predicate_values: set[IRI] = set()
     object_values: set[Node] = set()
+    graph_values: set[GraphLabel] = set()
+    named_graph_triples = 0
+    default_graph_triples = 0
 
-    for subject, predicate, obj in triples:
+    for subject, predicate, obj, graph_label in quads:
         subject_values.add(subject)
         predicate_values.add(predicate)
         object_values.add(obj)
@@ -2224,17 +2685,34 @@ def compute_graph_stats(triples: list[Triple]) -> dict[str, int]:
         collect_node_metrics(
             obj, iri_values, bnode_labels, literal_values, triple_terms
         )
+        if graph_label is None:
+            default_graph_triples += 1
+        else:
+            named_graph_triples += 1
+            graph_values.add(graph_label)
+            collect_node_metrics(
+                graph_label, iri_values, bnode_labels, literal_values, triple_terms
+            )
 
     return {
-        "triples": len(triples),
+        "triples": len(quads),
+        "quads": len(quads),
         "subjects_unique": len(subject_values),
         "predicates_unique": len(predicate_values),
         "objects_unique": len(object_values),
+        "named_graphs_unique": len(graph_values),
+        "default_graph_triples": default_graph_triples,
+        "named_graph_triples": named_graph_triples,
         "iris_unique": len(iri_values),
         "blank_nodes_unique": len(bnode_labels),
         "literals_unique": len(literal_values),
         "triple_terms_unique": len(triple_terms),
     }
+
+
+def compute_graph_stats(triples: list[Triple]) -> dict[str, int]:
+    """Compute graph-level counts for the parsed RDF triples."""
+    return compute_dataset_stats(triples_to_quads(triples))
 
 
 def convert_data(
@@ -2244,32 +2722,52 @@ def convert_data(
     source_name: str,
     base_iri: str | None,
     turtle_options: TurtleSerializationOptions | None = None,
-) -> tuple[str, list[Triple], dict[str, int]]:
+) -> tuple[str, list[Quad], dict[str, int]]:
     """Parse input text and serialize it to the requested target format."""
     if source_format == "nt":
-        triples = parse_ntriples(text, source=source_name)
+        quads = triples_to_quads(parse_ntriples(text, source=source_name))
+    elif source_format == "nq":
+        quads = parse_nquads(text, source=source_name)
     elif source_format == "turtle":
-        triples = parse_turtle(text, source=source_name, base_iri=base_iri)
+        quads = triples_to_quads(parse_turtle(text, source=source_name, base_iri=base_iri))
+    elif source_format == "trig":
+        quads = parse_trig(text, source=source_name, base_iri=base_iri)
     else:
         raise ValueError(f"unsupported source format: {source_format}")
 
     if target_format == "nt":
-        return serialize_ntriples(triples), triples, {}
+        triples = quads_to_default_graph_triples(
+            quads, target_format="N-Triples"
+        )
+        return serialize_ntriples(triples), quads, {}
+    if target_format == "nq":
+        return serialize_nquads(quads), quads, {}
     if target_format == "turtle":
+        triples = quads_to_default_graph_triples(
+            quads, target_format="Turtle"
+        )
         output_text, serialize_meta = serialize_turtle_with_meta(
             triples, options=turtle_options
         )
-        return output_text, triples, serialize_meta
+        return output_text, quads, serialize_meta
+    if target_format == "trig":
+        output_text, serialize_meta = serialize_trig_with_meta(
+            quads, options=turtle_options
+        )
+        return output_text, quads, serialize_meta
     raise ValueError(f"unsupported target format: {target_format}")
 
 
 def build_parser() -> argparse.ArgumentParser:
     """Create the command-line argument parser for `rdf_converter.py`."""
     parser = argparse.ArgumentParser(
-        description="Convert RDF 1.2 between N-Triples (.nt) and Turtle (.ttl).",
+        description=(
+            "Convert RDF 1.2 between N-Triples (.nt), N-Quads (.nq), "
+            "Turtle (.ttl), and TriG (.trig)."
+        ),
         epilog=(
             "Notes: --turtle-style/--lists/--auto-prefixes/--prefix/--output-base "
-            "apply only when target format is Turtle. "
+            "apply only when target format is Turtle or TriG. "
             "--validate-only parses input only and does not write output."
         ),
     )
@@ -2295,36 +2793,36 @@ def build_parser() -> argparse.ArgumentParser:
         "--base",
         dest="base",
         default=None,
-        help="Base IRI for Turtle input parsing (default: input file URI).",
+        help="Base IRI for Turtle/TriG input parsing (default: input file URI).",
     )
     parser.add_argument(
         "--turtle-style",
         choices=["readable", "minimal"],
         default="readable",
-        help="Turtle output style (target Turtle only).",
+        help="Turtle/TriG output style (target Turtle/TriG only).",
     )
     parser.add_argument(
         "--lists",
         choices=["auto", "off"],
         default="auto",
-        help="List compaction mode for Turtle output (target Turtle only).",
+        help="List compaction mode for Turtle/TriG output (target Turtle/TriG only).",
     )
     parser.add_argument(
         "--auto-prefixes",
         choices=["on", "off"],
         default="on",
-        help="Enable automatic @prefix generation (target Turtle only).",
+        help="Enable automatic @prefix generation (target Turtle/TriG only).",
     )
     parser.add_argument(
         "--prefix",
         action="append",
         default=[],
-        help="Manual prefix binding PREFIX=IRI (repeatable, target Turtle only).",
+        help="Manual prefix binding PREFIX=IRI (repeatable, target Turtle/TriG only).",
     )
     parser.add_argument(
         "--output-base",
         default=None,
-        help="Emit @base directive in Turtle output (target Turtle only).",
+        help="Emit @base directive in Turtle/TriG output (target Turtle/TriG only).",
     )
     parser.add_argument(
         "--validate-only",
@@ -2370,6 +2868,10 @@ def emit_stats(stats: dict[str, int]) -> None:
     """Print collected conversion and graph statistics to stderr."""
     order = [
         "triples",
+        "quads",
+        "named_graphs_unique",
+        "default_graph_triples",
+        "named_graph_triples",
         "subjects_unique",
         "predicates_unique",
         "objects_unique",
@@ -2378,6 +2880,8 @@ def emit_stats(stats: dict[str, int]) -> None:
         "literals_unique",
         "triple_terms_unique",
         "triples_serialized",
+        "quads_serialized",
+        "graphs_serialized",
         "prefixes_emitted",
         "lists_compacted",
     ]
@@ -2415,16 +2919,24 @@ def main() -> int:
 
         if args.validate_only:
             if source == "nt":
-                triples = parse_ntriples(input_text, source=source_name)
+                quads = triples_to_quads(parse_ntriples(input_text, source=source_name))
+            elif source == "nq":
+                quads = parse_nquads(input_text, source=source_name)
             elif source == "turtle":
-                triples = parse_turtle(
+                quads = triples_to_quads(
+                    parse_turtle(
+                        input_text, source=source_name, base_iri=base_iri
+                    )
+                )
+            elif source == "trig":
+                quads = parse_trig(
                     input_text, source=source_name, base_iri=base_iri
                 )
             else:
                 raise ValueError(f"unsupported source format: {source}")
 
             if args.stats:
-                emit_stats(compute_graph_stats(triples))
+                emit_stats(compute_dataset_stats(quads))
             return 0
 
         if target is None:
@@ -2432,7 +2944,7 @@ def main() -> int:
         if args.output is None:
             raise ValueError("missing output path")
 
-        if target != "turtle":
+        if target not in {"turtle", "trig"}:
             uses_turtle_output_options = (
                 args.turtle_style != "readable"
                 or args.lists != "auto"
@@ -2442,21 +2954,21 @@ def main() -> int:
             )
             if uses_turtle_output_options:
                 raise ValueError(
-                    "--turtle-style/--lists/--auto-prefixes/--prefix/--output-base require Turtle output"
+                    "--turtle-style/--lists/--auto-prefixes/--prefix/--output-base require Turtle or TriG output"
                 )
 
-        output_text, triples, serialize_meta = convert_data(
+        output_text, quads, serialize_meta = convert_data(
             text=input_text,
             source_format=source,
             target_format=target,
             source_name=source_name,
             base_iri=base_iri,
-            turtle_options=turtle_options if target == "turtle" else None,
+            turtle_options=turtle_options if target in {"turtle", "trig"} else None,
         )
         write_output(args.output, output_text)
 
         if args.stats:
-            stats = compute_graph_stats(triples)
+            stats = compute_dataset_stats(quads)
             stats.update(serialize_meta)
             emit_stats(stats)
         return 0
