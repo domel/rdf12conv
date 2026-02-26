@@ -39,6 +39,33 @@ CLI command after installation:
 rdf12conv INPUT [OUTPUT]
 ```
 
+## Docker
+
+Build the image from the repository root:
+
+```bash
+docker build -t rdf12conv .
+```
+
+Run the CLI (defaults to `--help` if no arguments are provided):
+
+```bash
+docker run --rm rdf12conv
+```
+
+Process files from the current directory by mounting it into `/work` (the container working directory):
+
+```bash
+docker run --rm -v "$PWD:/work" rdf12conv input.ttl output.nq
+```
+
+Examples with options:
+
+```bash
+docker run --rm -v "$PWD:/work" rdf12conv --validate-only --stats input.trig
+docker run --rm -v "$PWD:/work" rdf12conv --into-graph http://example.org/g input.nt output.trig
+```
+
 ## CLI Usage
 
 ```bash
