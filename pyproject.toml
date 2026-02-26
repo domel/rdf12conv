@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rdf12conv"
+dynamic = ["version"]
+description = "RDF 1.2 converter between N-Triples and Turtle (no rdflib dependency)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [
+  { name = "Dominik Tomaszuk", email = "ddooss@wp.pl" },
+]
+keywords = ["rdf", "turtle", "n-triples", "converter", "parser", "serializer"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Topic :: Text Processing",
+  "Topic :: Utilities",
+]
+
+[project.urls]
+Homepage = "https://github.com/domel/rdf12conv"
+Repository = "https://github.com/domel/rdf12conv"
+Issues = "https://github.com/domel/rdf12conv/issues"
+
+[project.scripts]
+rdf12conv = "rdf_converter:main"
+
+[tool.setuptools]
+py-modules = ["rdf_converter"]
+license-files = ["LICENSE"]
+
+[tool.setuptools.dynamic]
+version = { attr = "rdf_converter.__version__" }

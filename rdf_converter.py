@@ -15,6 +15,8 @@ from pathlib import Path
 from typing import Iterable
 from urllib.parse import urlsplit, urlunsplit
 
+__version__ = "0.1.0"
+
 RDF_NS = "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 XSD_NS = "http://www.w3.org/2001/XMLSchema#"
 

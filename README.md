@@ -24,6 +24,20 @@ It does not depend on `rdflib` for parsing or conversion.
 
 - Python 3.10+ (uses modern type syntax, e.g. `X | Y`)
 
+## Installation
+
+From PyPI (after publishing):
+
+```bash
+pip install rdf12conv
+```
+
+CLI command after installation:
+
+```bash
+rdf12conv INPUT [OUTPUT]
+```
+
 ## CLI Usage
 
 ```bash
