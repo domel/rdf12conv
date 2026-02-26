@@ -86,6 +86,9 @@ Core options:
 - `--from {nt,ntriples,n-triples,nq,nquads,n-quads,ttl,turtle,trig}`
 - `--to {nt,ntriples,n-triples,nq,nquads,n-quads,ttl,turtle,trig}`
 - `--base BASE_IRI` (base IRI for Turtle/TriG input; defaults to input file URI when possible)
+- `--dataset-to-graph-policy {strict,default-only,select,union}` (how to project `nq`/`trig` datasets to `nt`/`turtle`)
+- `--graph GRAPH_LABEL` (graph label for `--dataset-to-graph-policy select`; absolute IRI or `_:label`)
+- `--into-graph GRAPH_LABEL` (when converting `nt`/`turtle` to `nq`/`trig`, put all triples in one named graph)
 - `--validate-only` (parse only, do not write output)
 - `--stats` (print graph/dataset/serialization stats to `stderr`)
 
@@ -102,7 +105,9 @@ Validation rules enforced by the CLI:
 - `OUTPUT` is optional only with `--validate-only`
 - source and target formats must differ when converting
 - Turtle/TriG-only options are rejected for non-Turtle/TriG output
-- converting a dataset with named graphs to `nt`/`turtle` is rejected
+- `--dataset-to-graph-policy` / `--graph` apply only to `nt` / `turtle` output
+- `--into-graph` applies only to `nt`/`turtle` input with `nq`/`trig` output
+- `strict` (default) rejects converting a dataset with named graphs to `nt`/`turtle`
 - conflicting repeated `--prefix` bindings are rejected
 
 ## Turtle / TriG Output Modes
@@ -134,6 +139,9 @@ python3 rdf_converter.py --lists off input.nt output.ttl
 # Readable TriG output from N-Quads
 python3 rdf_converter.py input.nq output.trig
 
+# Put all triples into one named graph when up-converting graph -> dataset
+python3 rdf_converter.py --into-graph http://example.org/g input.ttl output.trig
+
 # Minimal TriG output
 python3 rdf_converter.py --turtle-style minimal input.nq output.trig
 
@@ -145,7 +153,26 @@ python3 rdf_converter.py --auto-prefixes off \
 
 # Emit @base in generated Turtle/TriG
 python3 rdf_converter.py --output-base http://example.org/base/ input.nt output.ttl
+
+# Lossy dataset -> graph conversion policies
+python3 rdf_converter.py --dataset-to-graph-policy default-only input.trig output.ttl
+python3 rdf_converter.py --dataset-to-graph-policy union input.nq output.nt
+python3 rdf_converter.py --dataset-to-graph-policy select \
+  --graph http://example.org/g \
+  input.trig output.ttl
 ```
+
+## Dataset -> Graph Conversion Policies
+
+When converting `nq` / `trig` to `nt` / `turtle`, graph labels cannot be represented.
+The CLI therefore requires an explicit policy if you want lossy behavior.
+
+- `strict` (default): fail if any named graph statements are present
+- `default-only`: keep only the default graph, drop all named graphs
+- `select`: keep only statements from one selected graph (`--graph ...`)
+- `union`: flatten all dataset statements (default + named graphs) into one graph
+
+For `nt` / `turtle` -> `nq` / `trig`, `--into-graph` can place all input triples into a single named graph instead of the default graph.
 
 ## Python API (Library Use)
 

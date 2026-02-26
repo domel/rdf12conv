@@ -1798,9 +1798,37 @@ def parse_trig(
     return parser.parse()
 
 
-def triples_to_quads(triples: list[Triple]) -> list[Quad]:
-    """Lift triples into the default graph for dataset processing."""
-    return [(subject, predicate, obj, None) for subject, predicate, obj in triples]
+def parse_cli_graph_label(value: str, *, option_name: str) -> GraphLabel:
+    """Parse CLI graph-label option as an absolute IRI or blank node label."""
+    raw = value.strip()
+    if not raw:
+        raise ValueError(f"{option_name} requires a non-empty value")
+
+    if raw.startswith("_:"):
+        parser = NTriplesParser(text=raw, source=option_name)
+        label = parser.parse_blank_node_label()
+        if not parser.scanner.eof():
+            parser.scanner.error("unexpected trailing characters in graph label")
+        return label
+
+    try:
+        validate_iri(raw, require_absolute=True, allow_empty=False)
+    except ValueError as exc:
+        raise ValueError(
+            f"invalid {option_name} value '{value}': expected absolute IRI or _:label ({exc})"
+        ) from exc
+    return IRI(raw)
+
+
+def triples_to_quads(
+    triples: list[Triple],
+    *,
+    graph_label: GraphLabel | None = None,
+) -> list[Quad]:
+    """Lift triples into one dataset graph for internal dataset processing."""
+    return [
+        (subject, predicate, obj, graph_label) for subject, predicate, obj in triples
+    ]
 
 
 def quads_to_default_graph_triples(
@@ -1817,6 +1845,41 @@ def quads_to_default_graph_triples(
             )
         triples.append((subject, predicate, obj))
     return triples
+
+
+def quads_to_graph_triples(
+    quads: list[Quad],
+    *,
+    target_format: str,
+    policy: str = "strict",
+    selected_graph: GraphLabel | None = None,
+) -> list[Triple]:
+    """Project a dataset into a graph according to an explicit lossy policy."""
+    if policy == "strict":
+        return quads_to_default_graph_triples(quads, target_format=target_format)
+
+    if policy == "default-only":
+        return [
+            (subject, predicate, obj)
+            for subject, predicate, obj, graph_label in quads
+            if graph_label is None
+        ]
+
+    if policy == "select":
+        if selected_graph is None:
+            raise ValueError(
+                "--dataset-to-graph-policy select requires --graph <IRI|_:label>"
+            )
+        return [
+            (subject, predicate, obj)
+            for subject, predicate, obj, graph_label in quads
+            if graph_label == selected_graph
+        ]
+
+    if policy == "union":
+        return [(subject, predicate, obj) for subject, predicate, obj, _ in quads]
+
+    raise ValueError(f"unsupported dataset-to-graph policy: {policy}")
 
 
 def format_node_nt(node: Node) -> str:
@@ -2722,29 +2785,43 @@ def convert_data(
     source_name: str,
     base_iri: str | None,
     turtle_options: TurtleSerializationOptions | None = None,
+    dataset_to_graph_policy: str = "strict",
+    selected_graph: GraphLabel | None = None,
+    into_graph: GraphLabel | None = None,
 ) -> tuple[str, list[Quad], dict[str, int]]:
     """Parse input text and serialize it to the requested target format."""
     if source_format == "nt":
-        quads = triples_to_quads(parse_ntriples(text, source=source_name))
+        quads = triples_to_quads(
+            parse_ntriples(text, source=source_name), graph_label=into_graph
+        )
     elif source_format == "nq":
         quads = parse_nquads(text, source=source_name)
     elif source_format == "turtle":
-        quads = triples_to_quads(parse_turtle(text, source=source_name, base_iri=base_iri))
+        quads = triples_to_quads(
+            parse_turtle(text, source=source_name, base_iri=base_iri),
+            graph_label=into_graph,
+        )
     elif source_format == "trig":
         quads = parse_trig(text, source=source_name, base_iri=base_iri)
     else:
         raise ValueError(f"unsupported source format: {source_format}")
 
     if target_format == "nt":
-        triples = quads_to_default_graph_triples(
-            quads, target_format="N-Triples"
+        triples = quads_to_graph_triples(
+            quads,
+            target_format="N-Triples",
+            policy=dataset_to_graph_policy,
+            selected_graph=selected_graph,
         )
         return serialize_ntriples(triples), quads, {}
     if target_format == "nq":
         return serialize_nquads(quads), quads, {}
     if target_format == "turtle":
-        triples = quads_to_default_graph_triples(
-            quads, target_format="Turtle"
+        triples = quads_to_graph_triples(
+            quads,
+            target_format="Turtle",
+            policy=dataset_to_graph_policy,
+            selected_graph=selected_graph,
         )
         output_text, serialize_meta = serialize_turtle_with_meta(
             triples, options=turtle_options
@@ -2794,6 +2871,32 @@ def build_parser() -> argparse.ArgumentParser:
         dest="base",
         default=None,
         help="Base IRI for Turtle/TriG input parsing (default: input file URI).",
+    )
+    parser.add_argument(
+        "--dataset-to-graph-policy",
+        choices=["strict", "default-only", "select", "union"],
+        default="strict",
+        help=(
+            "When converting dataset formats (N-Quads/TriG) to graph formats "
+            "(N-Triples/Turtle), choose how named graphs are handled."
+        ),
+    )
+    parser.add_argument(
+        "--graph",
+        default=None,
+        help=(
+            "Graph label for --dataset-to-graph-policy select "
+            "(absolute IRI or _:label)."
+        ),
+    )
+    parser.add_argument(
+        "--into-graph",
+        default=None,
+        help=(
+            "When converting N-Triples/Turtle to N-Quads/TriG, place all input "
+            "triples into this named graph (absolute IRI or _:label) instead of "
+            "the default graph."
+        ),
     )
     parser.add_argument(
         "--turtle-style",
@@ -2904,6 +3007,23 @@ def main() -> int:
         manual_prefixes = normalize_manual_prefixes(args.prefix)
         if args.output_base is not None:
             validate_iri(args.output_base, require_absolute=False, allow_empty=False)
+        selected_graph = (
+            parse_cli_graph_label(args.graph, option_name="--graph")
+            if args.graph is not None
+            else None
+        )
+        into_graph = (
+            parse_cli_graph_label(args.into_graph, option_name="--into-graph")
+            if args.into_graph is not None
+            else None
+        )
+
+        if args.dataset_to_graph_policy != "select" and args.graph is not None:
+            raise ValueError("--graph requires --dataset-to-graph-policy select")
+        if args.dataset_to_graph_policy == "select" and args.graph is None:
+            raise ValueError(
+                "--dataset-to-graph-policy select requires --graph <IRI|_:label>"
+            )
 
         turtle_options = TurtleSerializationOptions(
             style=args.turtle_style,
@@ -2918,6 +3038,12 @@ def main() -> int:
         base_iri = guess_base_iri(args.input, args.base)
 
         if args.validate_only:
+            if args.dataset_to_graph_policy != "strict" or args.graph is not None:
+                raise ValueError(
+                    "--dataset-to-graph-policy/--graph require an output conversion target"
+                )
+            if args.into_graph is not None:
+                raise ValueError("--into-graph requires an output conversion target")
             if source == "nt":
                 quads = triples_to_quads(parse_ntriples(input_text, source=source_name))
             elif source == "nq":
@@ -2944,6 +3070,18 @@ def main() -> int:
         if args.output is None:
             raise ValueError("missing output path")
 
+        if target not in {"nt", "turtle"} and args.dataset_to_graph_policy != "strict":
+            raise ValueError(
+                "--dataset-to-graph-policy requires N-Triples or Turtle output"
+            )
+        if target not in {"nt", "turtle"} and args.graph is not None:
+            raise ValueError("--graph requires N-Triples or Turtle output")
+        if args.into_graph is not None:
+            if source not in {"nt", "turtle"}:
+                raise ValueError("--into-graph requires N-Triples or Turtle input")
+            if target not in {"nq", "trig"}:
+                raise ValueError("--into-graph requires N-Quads or TriG output")
+
         if target not in {"turtle", "trig"}:
             uses_turtle_output_options = (
                 args.turtle_style != "readable"
@@ -2964,6 +3102,9 @@ def main() -> int:
             source_name=source_name,
             base_iri=base_iri,
             turtle_options=turtle_options if target in {"turtle", "trig"} else None,
+            dataset_to_graph_policy=args.dataset_to_graph_policy,
+            selected_graph=selected_graph,
+            into_graph=into_graph,
         )
         write_output(args.output, output_text)
 
