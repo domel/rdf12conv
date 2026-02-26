@@ -1,24 +1,25 @@
-# `rdf_converter.py` (RDF 1.2 N-Triples <-> Turtle)
+# `rdf_converter.py` (RDF 1.2 N-Triples / N-Quads / Turtle / TriG)
 
 This README documents only `rdf_converter.py`.
 
 `rdf_converter.py` is a self-contained Python parser/serializer/converter for:
 
 - RDF 1.2 N-Triples (`.nt`)
+- RDF 1.2 N-Quads (`.nq`, `.nquads`)
 - RDF 1.2 Turtle (`.ttl`, `.turtle`)
+- RDF 1.2 TriG (`.trig`)
 
 It does not depend on `rdflib` for parsing or conversion.
 
 ## Features
 
-- Parse RDF 1.2 N-Triples into an internal typed triple model
-- Parse RDF 1.2 Turtle (with base IRI support for relative IRIs)
-- Convert `N-Triples -> Turtle`
-- Convert `Turtle -> N-Triples`
-- Deterministic serialization
-- Optional readable Turtle output (grouping, object lists, prefix generation)
+- Parse RDF 1.2 N-Triples and Turtle into a typed triple model
+- Parse RDF 1.2 N-Quads and TriG into a typed quad/dataset model
+- Convert across triple and dataset syntaxes (`nt`, `nq`, `turtle`, `trig`)
+- Deterministic serialization (`N-Triples`, `N-Quads`)
+- Optional readable Turtle/TriG output (grouping, object lists, list compaction, prefixes)
 - Optional validation-only mode (parse without writing output)
-- Optional graph/statistics reporting
+- Optional graph/dataset/statistics reporting
 
 ## Requirements
 
@@ -51,13 +52,13 @@ Examples:
 ```bash
 # Convert by file extension
 python3 rdf_converter.py input.nt output.ttl
-python3 rdf_converter.py input.ttl output.nt
+python3 rdf_converter.py input.trig output.nq
 
 # Convert using stdin/stdout (explicit formats required)
-python3 rdf_converter.py --from nt --to turtle - -
+python3 rdf_converter.py --from nq --to trig - -
 
 # Validate only (no output path required)
-python3 rdf_converter.py --validate-only input.ttl
+python3 rdf_converter.py --validate-only input.trig
 ```
 
 ## Format Selection
@@ -67,7 +68,9 @@ Formats can be inferred from file extensions or passed explicitly.
 Supported aliases:
 
 - `nt`, `ntriples`, `n-triples`
+- `nq`, `nquads`, `n-quads`
 - `ttl`, `turtle`
+- `trig`
 
 Use:
 
@@ -80,13 +83,13 @@ If inference is not possible (for example `-` / stdin), provide the format expli
 
 Core options:
 
-- `--from {nt,ntriples,n-triples,ttl,turtle}`
-- `--to {nt,ntriples,n-triples,ttl,turtle}`
-- `--base BASE_IRI` (base IRI for Turtle input; defaults to input file URI when possible)
+- `--from {nt,ntriples,n-triples,nq,nquads,n-quads,ttl,turtle,trig}`
+- `--to {nt,ntriples,n-triples,nq,nquads,n-quads,ttl,turtle,trig}`
+- `--base BASE_IRI` (base IRI for Turtle/TriG input; defaults to input file URI when possible)
 - `--validate-only` (parse only, do not write output)
-- `--stats` (print graph/serialization stats to `stderr`)
+- `--stats` (print graph/dataset/serialization stats to `stderr`)
 
-Turtle output options (valid only when target format is Turtle):
+Turtle/TriG output options (valid only when target format is Turtle or TriG):
 
 - `--turtle-style {readable,minimal}`
 - `--lists {auto,off}`
@@ -98,10 +101,11 @@ Validation rules enforced by the CLI:
 
 - `OUTPUT` is optional only with `--validate-only`
 - source and target formats must differ when converting
-- Turtle-only options are rejected for non-Turtle output
+- Turtle/TriG-only options are rejected for non-Turtle/TriG output
+- converting a dataset with named graphs to `nt`/`turtle` is rejected
 - conflicting repeated `--prefix` bindings are rejected
 
-## Turtle Output Modes
+## Turtle / TriG Output Modes
 
 `--turtle-style readable` (default):
 
@@ -112,7 +116,7 @@ Validation rules enforced by the CLI:
 
 `--turtle-style minimal`:
 
-- writes one triple per line
+- writes one statement per line (or per line inside TriG graph blocks)
 - avoids readability-oriented compaction
 
 ## Examples
@@ -121,19 +125,25 @@ Validation rules enforced by the CLI:
 # Validate N-Triples and print stats
 python3 rdf_converter.py --validate-only --stats input.nt
 
+# Validate TriG and print dataset stats
+python3 rdf_converter.py --validate-only --stats input.trig
+
 # Turtle output without list compaction
 python3 rdf_converter.py --lists off input.nt output.ttl
 
-# Minimal Turtle output
-python3 rdf_converter.py --turtle-style minimal input.nt output.ttl
+# Readable TriG output from N-Quads
+python3 rdf_converter.py input.nq output.trig
 
-# Manual prefixes only
+# Minimal TriG output
+python3 rdf_converter.py --turtle-style minimal input.nq output.trig
+
+# Manual prefixes only (Turtle/TriG)
 python3 rdf_converter.py --auto-prefixes off \
   --prefix ex=http://example.org/ \
   --prefix foaf=http://xmlns.com/foaf/0.1/ \
-  input.nt output.ttl
+  input.nq output.trig
 
-# Emit @base in generated Turtle
+# Emit @base in generated Turtle/TriG
 python3 rdf_converter.py --output-base http://example.org/base/ input.nt output.ttl
 ```
 
@@ -144,11 +154,16 @@ python3 rdf_converter.py --output-base http://example.org/base/ input.nt output.
 Main functions:
 
 - `parse_ntriples(text, source="<string>") -> list[Triple]`
+- `parse_nquads(text, source="<string>") -> list[Quad]`
 - `parse_turtle(text, source="<string>", base_iri=None) -> list[Triple]`
+- `parse_trig(text, source="<string>", base_iri=None) -> list[Quad]`
 - `serialize_ntriples(triples) -> str`
+- `serialize_nquads(quads) -> str`
 - `serialize_turtle(triples, options=None) -> str`
 - `serialize_turtle_with_meta(triples, options=None) -> tuple[str, dict[str, int]]`
-- `convert_data(...) -> tuple[str, list[Triple], dict[str, int]]`
+- `serialize_trig(quads, options=None) -> str`
+- `serialize_trig_with_meta(quads, options=None) -> tuple[str, dict[str, int]]`
+- `convert_data(...) -> tuple[str, list[Quad], dict[str, int]]`
 
 Common data types:
 
@@ -156,18 +171,21 @@ Common data types:
 - `BNode`
 - `Literal`
 - `TripleTerm`
+- `GraphLabel`
+- `Triple`
+- `Quad`
 - `ParseError`
 - `TurtleSerializationOptions`
 
 Example:
 
 ```python
-from rdf_converter import parse_turtle, serialize_ntriples
+from rdf_converter import parse_trig, serialize_nquads
 
-ttl = '<http://example/s> <http://example/p> "x" .\\n'
-triples = parse_turtle(ttl, source="example.ttl", base_iri="http://example/")
-nt = serialize_ntriples(triples)
-print(nt)
+trig = '<http://example/g> { <http://example/s> <http://example/p> "x" . }\\n'
+quads = parse_trig(trig, source="example.trig", base_iri="http://example/")
+nq = serialize_nquads(quads)
+print(nq)
 ```
 
 ## Error Handling
@@ -177,8 +195,8 @@ print(nt)
 
 ## Notes
 
-- The implementation follows the repository grammars in `grammar/ntriples.bnf` and `grammar/turtle.bnf`
-- Turtle parsing supports base IRI resolution for relative IRIs
+- The implementation follows the repository grammars in `grammar/*.bnf`
+- Turtle and TriG parsing support base IRI resolution for relative IRIs
 - Serialization output is designed to remain parseable by the project parser
 
 ## License
