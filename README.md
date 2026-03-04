@@ -1,8 +1,8 @@
 # `rdf_converter.py` (RDF 1.2 N-Triples / N-Quads / Turtle / TriG)
 
-This README documents only `rdf_converter.py`.
+This README documents only `src/rdf_converter.py`.
 
-`rdf_converter.py` is a self-contained Python parser/serializer/converter for:
+`src/rdf_converter.py` is a self-contained Python parser/serializer/converter for:
 
 - RDF 1.2 N-Triples (`.nt`)
 - RDF 1.2 N-Quads (`.nq`, `.nquads`)
@@ -69,7 +69,7 @@ docker run --rm -v "$PWD:/work" rdf12conv --into-graph http://example.org/g inpu
 ## CLI Usage
 
 ```bash
-python3 rdf_converter.py INPUT [OUTPUT]
+python3 src/rdf_converter.py INPUT [OUTPUT]
 ```
 
 `INPUT` / `OUTPUT` can be file paths or `-` (stdin/stdout).
@@ -78,14 +78,14 @@ Examples:
 
 ```bash
 # Convert by file extension
-python3 rdf_converter.py input.nt output.ttl
-python3 rdf_converter.py input.trig output.nq
+python3 src/rdf_converter.py input.nt output.ttl
+python3 src/rdf_converter.py input.trig output.nq
 
 # Convert using stdin/stdout (explicit formats required)
-python3 rdf_converter.py --from nq --to trig - -
+python3 src/rdf_converter.py --from nq --to trig - -
 
 # Validate only (no output path required)
-python3 rdf_converter.py --validate-only input.trig
+python3 src/rdf_converter.py --validate-only input.trig
 ```
 
 ## Format Selection
@@ -155,36 +155,36 @@ Validation rules enforced by the CLI:
 
 ```bash
 # Validate N-Triples and print stats
-python3 rdf_converter.py --validate-only --stats input.nt
+python3 src/rdf_converter.py --validate-only --stats input.nt
 
 # Validate TriG and print dataset stats
-python3 rdf_converter.py --validate-only --stats input.trig
+python3 src/rdf_converter.py --validate-only --stats input.trig
 
 # Turtle output without list compaction
-python3 rdf_converter.py --lists off input.nt output.ttl
+python3 src/rdf_converter.py --lists off input.nt output.ttl
 
 # Readable TriG output from N-Quads
-python3 rdf_converter.py input.nq output.trig
+python3 src/rdf_converter.py input.nq output.trig
 
 # Put all triples into one named graph when up-converting graph -> dataset
-python3 rdf_converter.py --into-graph http://example.org/g input.ttl output.trig
+python3 src/rdf_converter.py --into-graph http://example.org/g input.ttl output.trig
 
 # Minimal TriG output
-python3 rdf_converter.py --turtle-style minimal input.nq output.trig
+python3 src/rdf_converter.py --turtle-style minimal input.nq output.trig
 
 # Manual prefixes only (Turtle/TriG)
-python3 rdf_converter.py --auto-prefixes off \
+python3 src/rdf_converter.py --auto-prefixes off \
   --prefix ex=http://example.org/ \
   --prefix foaf=http://xmlns.com/foaf/0.1/ \
   input.nq output.trig
 
 # Emit @base in generated Turtle/TriG
-python3 rdf_converter.py --output-base http://example.org/base/ input.nt output.ttl
+python3 src/rdf_converter.py --output-base http://example.org/base/ input.nt output.ttl
 
 # Lossy dataset -> graph conversion policies
-python3 rdf_converter.py --dataset-to-graph-policy default-only input.trig output.ttl
-python3 rdf_converter.py --dataset-to-graph-policy union input.nq output.nt
-python3 rdf_converter.py --dataset-to-graph-policy select \
+python3 src/rdf_converter.py --dataset-to-graph-policy default-only input.trig output.ttl
+python3 src/rdf_converter.py --dataset-to-graph-policy union input.nq output.nt
+python3 src/rdf_converter.py --dataset-to-graph-policy select \
   --graph http://example.org/g \
   input.trig output.ttl
 ```

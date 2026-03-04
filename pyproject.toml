@@ -8,7 +8,7 @@ dynamic = ["version"]
 description = "RDF 1.2 converter between N-Triples and Turtle (no rdflib dependency)"
 readme = "README.md"
 requires-python = ">=3.10"
-license = { file = "LICENSE" }
+license = { file = "LICENSE.txt" }
 authors = [
   { name = "Dominik Tomaszuk", email = "ddooss@wp.pl" },
 ]
@@ -36,8 +36,9 @@ Issues = "https://github.com/domel/rdf12conv/issues"
 rdf12conv = "rdf_converter:main"
 
 [tool.setuptools]
+package-dir = {"" = "src"}
 py-modules = ["rdf_converter"]
-license-files = ["LICENSE"]
+license-files = ["LICENSE.txt"]
 
 [tool.setuptools.dynamic]
 version = { attr = "rdf_converter.__version__" }

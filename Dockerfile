@@ -7,7 +7,8 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 WORKDIR /opt/rdf12conv
 
 # Copy only files required to build/install the CLI tool.
-COPY pyproject.toml README.md LICENSE rdf_converter.py ./
+COPY pyproject.toml README.md LICENSE.txt ./
+COPY src/rdf_converter.py src/
 
 RUN python -m pip install --upgrade pip \
     && python -m pip install .

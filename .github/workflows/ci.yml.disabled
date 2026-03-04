@@ -28,17 +28,17 @@ jobs:
           python-version: ${{ matrix.python-version }}
 
       - name: Syntax check
-        run: python -m py_compile rdf_converter.py
+        run: python -m py_compile src/rdf_converter.py
 
       - name: CLI help smoke test
-        run: python rdf_converter.py --help > /dev/null
+        run: python src/rdf_converter.py --help > /dev/null
 
       - name: Validate sample conversion
         shell: bash
         run: |
           printf '<http://example.org/s> <http://example.org/p> "x" .\n' > sample.nt
-          python rdf_converter.py sample.nt sample.ttl
-          python rdf_converter.py sample.ttl roundtrip.nt
+          python src/rdf_converter.py sample.nt sample.ttl
+          python src/rdf_converter.py sample.ttl roundtrip.nt
           test -s sample.ttl
           test -s roundtrip.nt
 
