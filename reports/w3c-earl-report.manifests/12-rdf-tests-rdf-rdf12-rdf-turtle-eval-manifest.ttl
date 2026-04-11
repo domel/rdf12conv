@@ -1,0 +1,562 @@
+@prefix dc1: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix earl: <http://www.w3.org/ns/earl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mf: <http://www.w3.org/2001/sw/DataAccess/tests/test-manifest#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdft: <http://www.w3.org/ns/rdftest#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12> a earl:Report ;
+    dc1:created "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    dc1:issued "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    dc1:title "rdf12conv 0.3.0 W3C RDF 1.1/1.2 EARL Report - RDF 1.2 Turtle Evaluation Tests" ;
+    mf:entries ( <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#manifest> ) ;
+    earl:generatedBy <https://github.com/domel#me> ;
+    earl:testSubjects ( <https://pypi.org/project/rdf12conv/0.3.0/> ) ;
+    foaf:maker <https://github.com/domel#me> ;
+    foaf:primaryTopic <https://pypi.org/project/rdf12conv/0.3.0/> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#assertion-1> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-1> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-annotation-01> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#assertion-10> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-10> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-annotation-10> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#assertion-11> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-11> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-annotation-11> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#assertion-12> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-12> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-annotation-12> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#assertion-13> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-13> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-bnode-01> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#assertion-14> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-14> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-bnode-02> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#assertion-15> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-15> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-reified-triples-annotation-01> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#assertion-16> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-16> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-reified-triples-annotation-02> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#assertion-17> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-17> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-reified-triples-annotation-03> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#assertion-18> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-18> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-rt-01> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#assertion-19> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-19> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-rt-02> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#assertion-2> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-2> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-annotation-02> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#assertion-20> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-20> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-rt-03> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#assertion-21> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-21> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-rt-04> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#assertion-22> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-22> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-rt-05> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#assertion-23> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-23> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-rt-06> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#assertion-24> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-24> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-rt-07> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#assertion-25> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-25> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-rt-08> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#assertion-26> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-26> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-tt-01> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#assertion-27> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-27> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-tt-02> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#assertion-28> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-28> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-tt-03> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#assertion-29> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-29> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-tt-04> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#assertion-3> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-3> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-annotation-03> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#assertion-4> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-4> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-annotation-04> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#assertion-5> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-5> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-annotation-05> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#assertion-6> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-6> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-annotation-06> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#assertion-7> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-7> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-annotation-07> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#assertion-8> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-8> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-annotation-08> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#assertion-9> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-9> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-annotation-09> .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#manifest> a mf:Manifest ;
+    rdfs:label "RDF 1.2 Turtle Evaluation Tests" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-annotation-01> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTurtleEval ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-annotation-01.ttl> ;
+    mf:name "Turtle 1.2 - Annotation form" ;
+    mf:result <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-annotation-01.nt> .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-annotation-02> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTurtleEval ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-annotation-02.ttl> ;
+    mf:name "Turtle 1.2 - Annotation example" ;
+    mf:result <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-annotation-02.nt> .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-annotation-03> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTurtleEval ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-annotation-03.ttl> ;
+    mf:name "Turtle 1.2 - Annotation - predicate and object lists" ;
+    mf:result <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-annotation-03.nt> .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-annotation-04> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTurtleEval ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-annotation-04.ttl> ;
+    mf:name "Turtle 1.2 - Annotation - nested" ;
+    mf:result <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-annotation-04.nt> .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-annotation-05> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTurtleEval ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-annotation-05.ttl> ;
+    mf:name "Turtle 1.2 - Annotation object list" ;
+    mf:result <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-annotation-05.nt> .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-annotation-06> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTurtleEval ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-annotation-06.ttl> ;
+    mf:name "Turtle 1.2 - Annotation with identifier" ;
+    mf:result <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-annotation-06.nt> .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-annotation-07> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTurtleEval ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-annotation-07.ttl> ;
+    mf:name "Turtle 1.2 - Different annotations have different default identifiers" ;
+    mf:result <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-annotation-07.nt> .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-annotation-08> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTurtleEval ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-annotation-08.ttl> ;
+    mf:name "Turtle 1.2 - Annotation form with explicit identifier" ;
+    mf:result <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-annotation-08.nt> .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-annotation-09> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTurtleEval ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-annotation-09.ttl> ;
+    mf:name "Turtle 1.2 - Annotation form with multiple reifiers" ;
+    mf:result <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-annotation-09.nt> .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-annotation-10> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTurtleEval ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-annotation-10.ttl> ;
+    mf:name "Turtle 1.2 - Annotation form with multiple annotation blocks" ;
+    mf:result <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-annotation-10.nt> .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-annotation-11> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTurtleEval ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-annotation-11.ttl> ;
+    mf:name "Turtle 1.2 - Annotation form with annotation block followed by reifier" ;
+    mf:result <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-annotation-11.nt> .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-annotation-12> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTurtleEval ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-annotation-12.ttl> ;
+    mf:name "Turtle 1.2 - Annotation form with alternating reifiers and annotation blocks" ;
+    mf:result <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-annotation-12.nt> .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-bnode-01> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTurtleEval ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-bnode-01.ttl> ;
+    mf:name "Turtle 1.2 - blank node label" ;
+    mf:result <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-bnode-01.nt> .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-bnode-02> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTurtleEval ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-bnode-02.ttl> ;
+    mf:name "Turtle 1.2 - blank node labels" ;
+    mf:result <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-bnode-02.nt> .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-reified-triples-annotation-01> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTurtleEval ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-reified-triples-annotation-01.ttl> ;
+    mf:name "Turtle 1.2 - Annotation with reified triples" ;
+    mf:result <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-reified-triples-annotation-01.nt> .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-reified-triples-annotation-02> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTurtleEval ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-reified-triples-annotation-02.ttl> ;
+    mf:name "Turtle 1.2 - Annotation on triple with reified triple subject" ;
+    mf:result <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-reified-triples-annotation-02.nt> .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-reified-triples-annotation-03> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTurtleEval ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-reified-triples-annotation-03.ttl> ;
+    mf:name "Turtle 1.2 - Annotation on triple with reified triple object" ;
+    mf:result <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-reified-triples-annotation-03.nt> .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-rt-01> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTurtleEval ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-rt-01.ttl> ;
+    mf:name "Turtle 1.2 - subject reification" ;
+    mf:result <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-rt-01.nt> .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-rt-02> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTurtleEval ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-rt-02.ttl> ;
+    mf:name "Turtle 1.2 - object reification" ;
+    mf:result <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-rt-02.nt> .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-rt-03> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTurtleEval ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-rt-03.ttl> ;
+    mf:name "Turtle 1.2 - subject reification with identifier" ;
+    mf:result <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-rt-03.nt> .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-rt-04> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTurtleEval ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-rt-04.ttl> ;
+    mf:name "Turtle 1.2 - object reification with identifier" ;
+    mf:result <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-rt-04.nt> .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-rt-05> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTurtleEval ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-rt-05.ttl> ;
+    mf:name "Turtle 1.2 - subject reification with bnode identifier" ;
+    mf:result <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-rt-05.nt> .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-rt-06> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTurtleEval ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-rt-06.ttl> ;
+    mf:name "Turtle 1.2 - object reification with bnode identifier" ;
+    mf:result <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-rt-06.nt> .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-rt-07> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTurtleEval ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-rt-07.ttl> ;
+    mf:name "Turtle 1.2 - subject reification with empty identifier" ;
+    mf:result <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-rt-07.nt> .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-rt-08> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTurtleEval ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-rt-08.ttl> ;
+    mf:name "Turtle 1.2 - object reification with empty identifier" ;
+    mf:result <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-rt-08.nt> .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-tt-01> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTurtleEval ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-tt-01.ttl> ;
+    mf:name "Turtle 1.2 - object triple term" ;
+    mf:result <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-tt-01.nt> .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-tt-02> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTurtleEval ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-tt-02.ttl> ;
+    mf:name "Turtle 1.2 - object triple term, no whitespace" ;
+    mf:result <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-tt-02.nt> .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-tt-03> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTurtleEval ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-tt-03.ttl> ;
+    mf:name "Turtle 1.2 - Nested, no whitespace" ;
+    mf:result <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-tt-03.nt> .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval#turtle12-tt-04> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTurtleEval ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-tt-04.ttl> ;
+    mf:name "Turtle 1.2 - Nested object term" ;
+    mf:result <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-turtle/eval/turtle12-eval-tt-04.nt> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-1> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-10> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-11> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-12> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-13> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-14> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-15> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-16> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-17> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-18> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-19> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-2> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-20> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-21> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-22> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-23> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-24> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-25> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-26> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-27> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-28> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-29> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-3> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-4> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-5> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-6> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-7> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-8> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-12#result-9> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<https://pypi.org/project/rdf12conv/0.3.0/> a doap:Project,
+        earl:Software,
+        earl:TestSubject ;
+    doap:description "Lightweight Python RDF 1.2 converter and validator for N-Triples, N-Quads, Turtle, and TriG."@en ;
+    doap:developer <https://github.com/domel#me> ;
+    doap:homepage <https://github.com/domel/rdf12conv> ;
+    doap:name "rdf12conv 0.3.0" ;
+    doap:programming-language "Python" ;
+    doap:release [ doap:created "2026-04-11"^^xsd:date ;
+            doap:name "rdf12conv 0.3.0 0.3.0" ;
+            doap:revision "0.3.0" ] .
+
+<https://github.com/domel#me> a earl:Assertor,
+        foaf:Person ;
+    foaf:homepage <https://github.com/domel> ;
+    foaf:name "Dominik Tomaszuk" .
+

@@ -1,0 +1,1230 @@
+@prefix dc1: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix earl: <http://www.w3.org/ns/earl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mf: <http://www.w3.org/2001/sw/DataAccess/tests/test-manifest#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdft: <http://www.w3.org/ns/rdftest#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5> a earl:Report ;
+    dc1:created "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    dc1:issued "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    dc1:title "rdf12conv 0.3.0 W3C RDF 1.1/1.2 EARL Report - N-Triples tests" ;
+    mf:entries ( <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl> ) ;
+    earl:generatedBy <https://github.com/domel#me> ;
+    earl:testSubjects ( <https://pypi.org/project/rdf12conv/0.3.0/> ) ;
+    foaf:maker <https://github.com/domel#me> ;
+    foaf:primaryTopic <https://pypi.org/project/rdf12conv/0.3.0/> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-1> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-1> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#comment_following_triple> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-10> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-10> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#literal_with_BACKSPACE> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-11> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-11> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#literal_with_CARRIAGE_RETURN> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-12> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-12> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#literal_with_CHARACTER_TABULATION> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-13> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-13> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#literal_with_FORM_FEED> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-14> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-14> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#literal_with_LINE_FEED> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-15> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-15> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#literal_with_REVERSE_SOLIDUS> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-16> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-16> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#literal_with_REVERSE_SOLIDUS2> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-17> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-17> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#literal_with_UTF8_boundaries> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-18> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-18> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#literal_with_dquote> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-19> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-19> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#literal_with_numeric_escape4> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-2> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-2> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#langtagged_string> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-20> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-20> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#literal_with_numeric_escape8> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-21> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-21> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#literal_with_squote> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-22> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-22> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#minimal_whitespace> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-23> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-23> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-base-01> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-24> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-24> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-bnode-01> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-25> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-25> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-bnode-02> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-26> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-26> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-esc-01> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-27> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-27> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-esc-02> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-28> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-28> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-esc-03> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-29> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-29> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-lang-01> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-3> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-3> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#lantag_with_subtag> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-30> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-30> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-num-01> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-31> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-31> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-num-02> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-32> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-32> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-num-03> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-33> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-33> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-prefix-01> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-34> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-34> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-string-01> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-35> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-35> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-string-02> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-36> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-36> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-string-03> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-37> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-37> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-string-04> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-38> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-38> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-string-05> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-39> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-39> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-string-06> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-4> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-4> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#literal> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-40> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-40> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-string-07> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-41> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-41> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-struct-01> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-42> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-42> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-struct-02> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-43> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-43> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-uri-01> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-44> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-44> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-uri-02> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-45> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-45> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-uri-03> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-46> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-46> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-uri-04> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-47> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-47> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-uri-05> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-48> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-48> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-uri-06> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-49> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-49> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-uri-07> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-5> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-5> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#literal_all_controls> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-50> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-50> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-uri-08> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-51> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-51> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-uri-09> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-52> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-52> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bnode-01> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-53> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-53> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bnode-02> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-54> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-54> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bnode-03> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-55> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-55> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-datatypes-01> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-56> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-56> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-datatypes-02> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-57> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-57> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-file-01> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-58> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-58> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-file-02> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-59> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-59> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-file-03> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-6> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-6> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#literal_all_punctuation> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-60> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-60> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-str-esc-01> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-61> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-61> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-str-esc-02> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-62> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-62> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-str-esc-03> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-63> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-63> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-string-01> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-64> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-64> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-string-02> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-65> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-65> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-string-03> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-66> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-66> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-subm-01> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-67> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-67> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-uri-01> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-68> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-68> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-uri-02> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-69> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-69> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-uri-03> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-7> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-7> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#literal_ascii_boundaries> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-70> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-70> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-uri-04> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-8> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-8> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#literal_with_2_dquotes> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#assertion-9> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-9> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#literal_with_2_squotes> .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl> a mf:Manifest ;
+    rdfs:label "N-Triples tests" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#comment_following_triple> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/comment_following_triple.nt> ;
+    mf:name "comment_following_triple" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#langtagged_string> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/langtagged_string.nt> ;
+    mf:name "langtagged_string" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#lantag_with_subtag> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/lantag_with_subtag.nt> ;
+    mf:name "lantag_with_subtag" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#literal> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/literal.nt> ;
+    mf:name "literal" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#literal_all_controls> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/literal_all_controls.nt> ;
+    mf:name "literal_all_controls" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#literal_all_punctuation> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/literal_all_punctuation.nt> ;
+    mf:name "literal_all_punctuation" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#literal_ascii_boundaries> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/literal_ascii_boundaries.nt> ;
+    mf:name "literal_ascii_boundaries" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#literal_with_2_dquotes> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/literal_with_2_dquotes.nt> ;
+    mf:name "literal_with_2_dquotes" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#literal_with_2_squotes> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/literal_with_2_squotes.nt> ;
+    mf:name "literal_with_2_squotes" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#literal_with_BACKSPACE> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/literal_with_BACKSPACE.nt> ;
+    mf:name "literal_with_BACKSPACE" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#literal_with_CARRIAGE_RETURN> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/literal_with_CARRIAGE_RETURN.nt> ;
+    mf:name "literal_with_CARRIAGE_RETURN" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#literal_with_CHARACTER_TABULATION> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/literal_with_CHARACTER_TABULATION.nt> ;
+    mf:name "literal_with_CHARACTER_TABULATION" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#literal_with_FORM_FEED> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/literal_with_FORM_FEED.nt> ;
+    mf:name "literal_with_FORM_FEED" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#literal_with_LINE_FEED> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/literal_with_LINE_FEED.nt> ;
+    mf:name "literal_with_LINE_FEED" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#literal_with_REVERSE_SOLIDUS> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/literal_with_REVERSE_SOLIDUS.nt> ;
+    mf:name "literal_with_REVERSE_SOLIDUS" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#literal_with_REVERSE_SOLIDUS2> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/literal_with_REVERSE_SOLIDUS2.nt> ;
+    mf:name "literal_with_REVERSE_SOLIDUS2" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#literal_with_UTF8_boundaries> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/literal_with_UTF8_boundaries.nt> ;
+    mf:name "literal_with_UTF8_boundaries" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#literal_with_dquote> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/literal_with_dquote.nt> ;
+    mf:name "literal_with_dquote" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#literal_with_numeric_escape4> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/literal_with_numeric_escape4.nt> ;
+    mf:name "literal_with_numeric_escape4" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#literal_with_numeric_escape8> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/literal_with_numeric_escape8.nt> ;
+    mf:name "literal_with_numeric_escape8" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#literal_with_squote> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/literal_with_squote.nt> ;
+    mf:name "literal_with_squote" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#minimal_whitespace> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/minimal_whitespace.nt> ;
+    mf:name "minimal_whitespace" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-base-01> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesNegativeSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/nt-syntax-bad-base-01.nt> ;
+    mf:name "nt-syntax-bad-base-01" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-bnode-01> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesNegativeSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/nt-syntax-bad-bnode-01.nt> ;
+    mf:name "nt-syntax-bad-bnode-01" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-bnode-02> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesNegativeSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/nt-syntax-bad-bnode-02.nt> ;
+    mf:name "nt-syntax-bad-bnode-02" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-esc-01> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesNegativeSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/nt-syntax-bad-esc-01.nt> ;
+    mf:name "nt-syntax-bad-esc-01" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-esc-02> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesNegativeSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/nt-syntax-bad-esc-02.nt> ;
+    mf:name "nt-syntax-bad-esc-02" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-esc-03> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesNegativeSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/nt-syntax-bad-esc-03.nt> ;
+    mf:name "nt-syntax-bad-esc-03" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-lang-01> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesNegativeSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/nt-syntax-bad-lang-01.nt> ;
+    mf:name "nt-syntax-bad-lang-01" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-num-01> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesNegativeSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/nt-syntax-bad-num-01.nt> ;
+    mf:name "nt-syntax-bad-num-01" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-num-02> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesNegativeSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/nt-syntax-bad-num-02.nt> ;
+    mf:name "nt-syntax-bad-num-02" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-num-03> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesNegativeSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/nt-syntax-bad-num-03.nt> ;
+    mf:name "nt-syntax-bad-num-03" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-prefix-01> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesNegativeSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/nt-syntax-bad-prefix-01.nt> ;
+    mf:name "nt-syntax-bad-prefix-01" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-string-01> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesNegativeSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/nt-syntax-bad-string-01.nt> ;
+    mf:name "nt-syntax-bad-string-01" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-string-02> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesNegativeSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/nt-syntax-bad-string-02.nt> ;
+    mf:name "nt-syntax-bad-string-02" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-string-03> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesNegativeSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/nt-syntax-bad-string-03.nt> ;
+    mf:name "nt-syntax-bad-string-03" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-string-04> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesNegativeSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/nt-syntax-bad-string-04.nt> ;
+    mf:name "nt-syntax-bad-string-04" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-string-05> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesNegativeSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/nt-syntax-bad-string-05.nt> ;
+    mf:name "nt-syntax-bad-string-05" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-string-06> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesNegativeSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/nt-syntax-bad-string-06.nt> ;
+    mf:name "nt-syntax-bad-string-06" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-string-07> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesNegativeSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/nt-syntax-bad-string-07.nt> ;
+    mf:name "nt-syntax-bad-string-07" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-struct-01> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesNegativeSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/nt-syntax-bad-struct-01.nt> ;
+    mf:name "nt-syntax-bad-struct-01" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-struct-02> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesNegativeSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/nt-syntax-bad-struct-02.nt> ;
+    mf:name "nt-syntax-bad-struct-02" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-uri-01> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesNegativeSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/nt-syntax-bad-uri-01.nt> ;
+    mf:name "nt-syntax-bad-uri-01" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-uri-02> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesNegativeSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/nt-syntax-bad-uri-02.nt> ;
+    mf:name "nt-syntax-bad-uri-02" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-uri-03> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesNegativeSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/nt-syntax-bad-uri-03.nt> ;
+    mf:name "nt-syntax-bad-uri-03" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-uri-04> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesNegativeSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/nt-syntax-bad-uri-04.nt> ;
+    mf:name "nt-syntax-bad-uri-04" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-uri-05> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesNegativeSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/nt-syntax-bad-uri-05.nt> ;
+    mf:name "nt-syntax-bad-uri-05" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-uri-06> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesNegativeSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/nt-syntax-bad-uri-06.nt> ;
+    mf:name "nt-syntax-bad-uri-06" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-uri-07> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesNegativeSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/nt-syntax-bad-uri-07.nt> ;
+    mf:name "nt-syntax-bad-uri-07" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-uri-08> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesNegativeSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/nt-syntax-bad-uri-08.nt> ;
+    mf:name "nt-syntax-bad-uri-08" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bad-uri-09> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesNegativeSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/nt-syntax-bad-uri-09.nt> ;
+    mf:name "nt-syntax-bad-uri-09" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bnode-01> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/nt-syntax-bnode-01.nt> ;
+    mf:name "nt-syntax-bnode-01" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bnode-02> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/nt-syntax-bnode-02.nt> ;
+    mf:name "nt-syntax-bnode-02" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-bnode-03> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/nt-syntax-bnode-03.nt> ;
+    mf:name "nt-syntax-bnode-03" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-datatypes-01> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/nt-syntax-datatypes-01.nt> ;
+    mf:name "nt-syntax-datatypes-01" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-datatypes-02> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/nt-syntax-datatypes-02.nt> ;
+    mf:name "nt-syntax-datatypes-02" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-file-01> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/nt-syntax-file-01.nt> ;
+    mf:name "nt-syntax-file-01" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-file-02> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/nt-syntax-file-02.nt> ;
+    mf:name "nt-syntax-file-02" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-file-03> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/nt-syntax-file-03.nt> ;
+    mf:name "nt-syntax-file-03" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-str-esc-01> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/nt-syntax-str-esc-01.nt> ;
+    mf:name "nt-syntax-str-esc-01" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-str-esc-02> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/nt-syntax-str-esc-02.nt> ;
+    mf:name "nt-syntax-str-esc-02" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-str-esc-03> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/nt-syntax-str-esc-03.nt> ;
+    mf:name "nt-syntax-str-esc-03" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-string-01> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/nt-syntax-string-01.nt> ;
+    mf:name "nt-syntax-string-01" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-string-02> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/nt-syntax-string-02.nt> ;
+    mf:name "nt-syntax-string-02" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-string-03> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/nt-syntax-string-03.nt> ;
+    mf:name "nt-syntax-string-03" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-subm-01> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/nt-syntax-subm-01.nt> ;
+    mf:name "nt-syntax-subm-01" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-uri-01> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/nt-syntax-uri-01.nt> ;
+    mf:name "nt-syntax-uri-01" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-uri-02> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/nt-syntax-uri-02.nt> ;
+    mf:name "nt-syntax-uri-02" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-uri-03> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/nt-syntax-uri-03.nt> ;
+    mf:name "nt-syntax-uri-03" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/manifest.ttl#nt-syntax-uri-04> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestNTriplesPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf11/rdf-n-triples/nt-syntax-uri-04.nt> ;
+    mf:name "nt-syntax-uri-04" .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-1> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-10> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-11> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-12> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-13> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-14> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-15> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-16> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-17> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-18> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-19> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-2> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-20> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-21> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-22> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-23> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-24> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-25> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-26> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-27> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-28> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-29> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-3> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-30> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-31> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-32> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-33> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-34> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-35> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-36> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-37> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-38> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-39> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-4> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-40> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-41> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-42> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-43> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-44> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-45> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-46> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-47> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-48> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-49> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-5> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-50> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-51> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-52> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-53> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-54> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-55> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-56> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-57> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-58> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-59> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-6> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-60> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-61> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-62> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-63> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-64> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-65> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-66> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-67> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-68> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-69> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-7> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-70> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-8> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-5#result-9> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<https://pypi.org/project/rdf12conv/0.3.0/> a doap:Project,
+        earl:Software,
+        earl:TestSubject ;
+    doap:description "Lightweight Python RDF 1.2 converter and validator for N-Triples, N-Quads, Turtle, and TriG."@en ;
+    doap:developer <https://github.com/domel#me> ;
+    doap:homepage <https://github.com/domel/rdf12conv> ;
+    doap:name "rdf12conv 0.3.0" ;
+    doap:programming-language "Python" ;
+    doap:release [ doap:created "2026-04-11"^^xsd:date ;
+            doap:name "rdf12conv 0.3.0 0.3.0" ;
+            doap:revision "0.3.0" ] .
+
+<https://github.com/domel#me> a earl:Assertor,
+        foaf:Person ;
+    foaf:homepage <https://github.com/domel> ;
+    foaf:name "Dominik Tomaszuk" .
+

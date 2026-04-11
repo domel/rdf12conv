@@ -1,0 +1,635 @@
+@prefix dc1: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix earl: <http://www.w3.org/ns/earl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix mf: <http://www.w3.org/2001/sw/DataAccess/tests/test-manifest#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdft: <http://www.w3.org/ns/rdftest#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16> a earl:Report ;
+    dc1:created "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    dc1:issued "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    dc1:title "rdf12conv 0.3.0 W3C RDF 1.1/1.2 EARL Report - RDF 1.2 TriG Syntax Tests" ;
+    mf:entries ( <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#manifest> ) ;
+    earl:generatedBy <https://github.com/domel#me> ;
+    earl:testSubjects ( <https://pypi.org/project/rdf12conv/0.3.0/> ) ;
+    foaf:maker <https://github.com/domel#me> ;
+    foaf:primaryTopic <https://pypi.org/project/rdf12conv/0.3.0/> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#assertion-1> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-1> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-1> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#assertion-10> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-10> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-ann-6> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#assertion-11> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-11> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-ann-7> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#assertion-12> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-12> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-ann-8> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#assertion-13> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-13> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-bad-1> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#assertion-14> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-14> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-bad-2> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#assertion-15> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-15> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-bad-3> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#assertion-16> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-16> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-bad-4> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#assertion-17> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-17> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-bad-5> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#assertion-18> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-18> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-bad-6> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#assertion-19> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-19> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-bad-7> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#assertion-2> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-2> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-2> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#assertion-20> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-20> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-bad-ann-1> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#assertion-21> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-21> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-bad-ann-2> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#assertion-22> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-22> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-base-1> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#assertion-23> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-23> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-base-2> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#assertion-24> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-24> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-base-bad-1> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#assertion-25> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-25> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-base-bad-2> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#assertion-26> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-26> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-bnode-1> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#assertion-27> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-27> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-bnode-2> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#assertion-28> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-28> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-bnode-3> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#assertion-29> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-29> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-compound-1> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#assertion-3> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-3> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-3> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#assertion-30> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-30> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-inside-1> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#assertion-31> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-31> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-inside-2> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#assertion-32> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-32> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-inside-3> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#assertion-33> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-33> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-inside-4> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#assertion-34> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-34> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-nested-1> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#assertion-35> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-35> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-nested-2> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#assertion-4> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-4> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-4> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#assertion-5> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-5> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-ann-1> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#assertion-6> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-6> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-ann-2> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#assertion-7> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-7> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-ann-3> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#assertion-8> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-8> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-ann-4> .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#assertion-9> a earl:Assertion ;
+    earl:assertedBy <https://github.com/domel#me> ;
+    earl:mode earl:automatic ;
+    earl:result <urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-9> ;
+    earl:subject <https://pypi.org/project/rdf12conv/0.3.0/> ;
+    earl:test <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-ann-5> .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#manifest> a mf:Manifest ;
+    rdfs:label "RDF 1.2 TriG Syntax Tests" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-1> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTrigPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax/trig12-syntax-basic-01.trig> ;
+    mf:name "TriG 1.2 - subject reified triple" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-2> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTrigPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax/trig12-syntax-basic-02.trig> ;
+    mf:name "TriG 1.2 - object reified triple" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-3> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTrigPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax/trig12-syntax-basic-03.trig> ;
+    mf:name "TriG 1.2 - triple term object" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-4> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTrigPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax/trig12-syntax-basic-04.trig> ;
+    mf:name "TriG 1.2 - reified triple outside triple" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-ann-1> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTrigPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax/trig12-annotation-1.trig> ;
+    mf:name "TriG 1.2 - Annotation form" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-ann-2> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTrigPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax/trig12-annotation-2.trig> ;
+    mf:name "TriG 1.2 - Annotation example" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-ann-3> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTrigPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax/trig12-annotation-3.trig> ;
+    mf:name "TriG 1.2 - Annotation predicateObjecetList" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-ann-4> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTrigPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax/trig12-annotation-4.trig> ;
+    mf:name "TriG 1.2 - Annotation followed by predicate/object" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-ann-5> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTrigPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax/trig12-annotation-5.trig> ;
+    mf:name "TriG 1.2 - Reifier without annotation block" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-ann-6> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTrigPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax/trig12-annotation-6.trig> ;
+    mf:name "TriG 1.2 - Empty reifier without annotation block" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-ann-7> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTrigPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax/trig12-annotation-7.trig> ;
+    mf:name "TriG 1.2 - Reifier with annotation block" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-ann-8> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTrigPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax/trig12-annotation-8.trig> ;
+    mf:name "TriG 1.2 - Empty reifier with annotation block" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-bad-1> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTrigNegativeSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax/trig12-syntax-bad-01.trig> ;
+    mf:name "TriG 1.2 - bad - reified triple as predicate" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-bad-2> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTrigNegativeSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax/trig12-syntax-bad-02.trig> ;
+    mf:name "TriG 1.2 - bad - literal in subject position of reified triple" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-bad-3> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTrigNegativeSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax/trig12-syntax-bad-03.trig> ;
+    mf:name "TriG 1.2 - bad - blank node  as predicate in reified triple" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-bad-4> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTrigNegativeSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax/trig12-syntax-bad-04.trig> ;
+    mf:name "TriG 1.2 - bad - incomplete reified triple" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-bad-5> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTrigNegativeSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax/trig12-syntax-bad-05.trig> ;
+    mf:name "TriG 1.2 - bad - over-long reified triple" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-bad-6> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTrigNegativeSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax/trig12-syntax-bad-06.trig> ;
+    mf:name "TriG 1.2 - bad - reified with list object" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-bad-7> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTrigNegativeSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax/trig12-syntax-bad-07.trig> ;
+    mf:name "TriG 1.2 - bad - compound blank node expression" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-bad-ann-1> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTrigNegativeSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax/trig12-syntax-bad-ann-1.trig> ;
+    mf:name "TriG 1.2 - bad - empty annotation" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-bad-ann-2> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTrigNegativeSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax/trig12-syntax-bad-ann-2.trig> ;
+    mf:name "TriG 1.2 - bad - triple as annotation" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-base-1> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTrigPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax/trig12-base-1.trig> ;
+    mf:name "base direction ltr" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-base-2> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTrigPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax/trig12-base-2.trig> ;
+    mf:name "base direction ltr" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-base-bad-1> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTrigNegativeSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax/trig12-base-bad-1.trig> ;
+    mf:name "undefined base direction" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-base-bad-2> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTrigNegativeSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax/trig12-base-bad-2.trig> ;
+    mf:name "upper case LTR" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-bnode-1> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTrigPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax/trig12-syntax-bnode-01.trig> ;
+    mf:name "TriG 1.2 - blank node subject" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-bnode-2> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTrigPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax/trig12-syntax-bnode-02.trig> ;
+    mf:name "TriG 1.2 - blank node object" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-bnode-3> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTrigPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax/trig12-syntax-bnode-03.trig> ;
+    mf:name "TriG 1.2 - blank node" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-compound-1> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTrigPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax/trig12-syntax-compound.trig> ;
+    mf:name "TriG 1.2 - compound forms" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-inside-1> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTrigPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax/trig12-syntax-inside-01.trig> ;
+    mf:name "TriG 1.2 - reified triple inside blankNodePropertyList" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-inside-2> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTrigPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax/trig12-syntax-inside-02.trig> ;
+    mf:name "TriG 1.2 - reified triple inside collection" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-inside-3> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTrigPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax/trig12-syntax-inside-03.trig> ;
+    mf:name "TriG 1.2 - reified triple with IRI identifier" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-inside-4> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTrigPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax/trig12-syntax-inside-04.trig> ;
+    mf:name "TriG 1.2 - reified triple with blank node identifier" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-nested-1> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTrigPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax/trig12-syntax-nested-01.trig> ;
+    mf:name "TriG 1.2 - nested quoted triple, subject position" .
+
+<https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax#trig12-nested-2> a earl:TestCase,
+        earl:TestCriterion,
+        rdft:TestTrigPositiveSyntax ;
+    mf:action <https://w3c.github.io/rdf-tests/rdf/rdf12/rdf-trig/syntax/trig12-syntax-nested-02.trig> ;
+    mf:name "TriG 1.2 - nested quoted triple, object position" .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-1> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-10> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-11> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-12> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-13> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-14> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-15> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-16> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-17> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-18> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-19> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-2> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-20> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-21> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-22> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-23> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-24> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-25> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-26> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-27> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-28> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-29> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-3> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-30> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-31> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-32> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-33> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-34> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-35> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-4> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-5> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-6> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-7> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-8> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<urn:uuid:e9293182-cc17-4585-b0d2-eb1f758894eb#manifest-16#result-9> a earl:TestResult ;
+    dc1:date "2026-04-11T18:57:08+00:00"^^xsd:dateTime ;
+    earl:outcome earl:passed .
+
+<https://pypi.org/project/rdf12conv/0.3.0/> a doap:Project,
+        earl:Software,
+        earl:TestSubject ;
+    doap:description "Lightweight Python RDF 1.2 converter and validator for N-Triples, N-Quads, Turtle, and TriG."@en ;
+    doap:developer <https://github.com/domel#me> ;
+    doap:homepage <https://github.com/domel/rdf12conv> ;
+    doap:name "rdf12conv 0.3.0" ;
+    doap:programming-language "Python" ;
+    doap:release [ doap:created "2026-04-11"^^xsd:date ;
+            doap:name "rdf12conv 0.3.0 0.3.0" ;
+            doap:revision "0.3.0" ] .
+
+<https://github.com/domel#me> a earl:Assertor,
+        foaf:Person ;
+    foaf:homepage <https://github.com/domel> ;
+    foaf:name "Dominik Tomaszuk" .
+
